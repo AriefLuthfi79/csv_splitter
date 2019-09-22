@@ -19,9 +19,7 @@ module CsvSplitter
     def download_every_file(name_file)
       zipfile = Tempfile.new('downloader.zip')
       Zip::Archive.open(zipfile.path, Zip::CREATE) do |zip|
-        name_file.each do |file|
-          zip.add_file file
-        end
+        name_file.each { |file| zip.add_file file }
       end
 
       send_file(zipfile, :disposition => 'attachment')
