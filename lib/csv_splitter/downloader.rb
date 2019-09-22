@@ -14,7 +14,7 @@ module CsvSplitter
 
       size.times do |iterate|
         name_file << "#{target_file}#{iterate}.csv"
-        File.open("/tmp/#{iterate}.csv", "a") do |f|
+        File.open("/tmp/#{iterate}.csv", "w") do |f|
           f.puts header.join(", ").strip
           result[iterate].size.times do |i|
             f.puts result[iterate][i].join ", "
