@@ -27,7 +27,6 @@ module CsvSplitter
 
     private
 
-    # Action Support like method (:in_group)
     def grouping(number)
       _size = data.size / number
       lefts = data.size % number
